@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+ api:
+  depens_on:
+    -mysqldb
+  image: nest-server
+  build: .
+  env_file:
+    - .env
+  ports:
+   - $PORT:3000
+
+ mysqldb:
+    image: mysql
+
+  
+ 
