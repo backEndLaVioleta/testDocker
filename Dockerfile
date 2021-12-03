@@ -9,4 +9,4 @@ COPY ./dist ./dist
 RUN npm ci --only=production
 
 # CMD npm run start:prod
-CMD [ "npm", "run", "start:prod" ]
+CMD ["npm", "run", "start:prod"]

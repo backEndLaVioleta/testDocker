@@ -71,3 +71,15 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## Commands to deploy API in HEROKU
+
+> docker-compose up
+> heroku  login
+> heroku  container:login
+> heroku create nest-server-rgm
+> heroku container: push web --app nest-server-rgm
+> heroku container:release web --app nest-server-rgm
+
+heroku [tools](https://github.com/heroku/heroku-container-tools)
+
