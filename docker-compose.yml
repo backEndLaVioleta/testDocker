@@ -2,17 +2,25 @@ version: '3.8'
 
 services:
  api:
-  depens_on:
-    -mysqldb
-  image: nest-server
+
   build: .
+  image: nest-server
   env_file:
     - .env
   ports:
    - $PORT:3000
 
- mysqldb:
-    image: mysql
+ mongo:
+   image: mongo
+   ports:
+    - 3456:27017
+   environment:
+    - MONGO_INITDB_ROOT_USERNAME=root
+    - MONGO_INITDB_ROOT_PASSWORD=1234
+    - MONGO_INITDB_ROOT_DATABASE=rgm_db
+   volumes:
+    - mongo_data:/data/db
+    - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
 
   
  
